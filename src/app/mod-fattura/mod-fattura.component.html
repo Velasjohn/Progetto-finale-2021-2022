@@ -1,0 +1,154 @@
+<h2 class="my-3 text-center">Modifica Fattura</h2>
+<div class="d-flex flex-column align-items-center">
+    <h5 class="my-3">Info Fattura</h5>
+    <div class="input-group input-group-md mb-3 w-75">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Data</span>
+        <input type="text" [(ngModel)]="fatturaMod.data" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+    </div>
+    <div class="input-group input-group-md mb-3 w-75">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Numero</span>
+        <input type="text" [(ngModel)]="fatturaMod.numero" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+    </div>
+    <div class="input-group input-group-md mb-3 w-75">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Anno</span>
+        <input type="text" [(ngModel)]="fatturaMod.anno" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+    </div>
+    <div class="input-group mb-3 w-75">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">Stato Fattura</label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="fatturaMod.stato">
+          <option selected [ngValue]="fatturaMod.stato">{{fatturaMod.stato.nome}}</option>
+          <option [ngValue]="item" *ngFor="let item of stato">{{item.nome}}</option>
+        </select>
+      </div>
+      <button type="button" class="btn btn-primary w-50 my-5" (click)="salvaFattura()">Salva</button>
+    <h5 class="my-3">Info Azienda</h5>
+    <div class="input-group input-group-md mb-3 w-75">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Ragione Sociale</span>
+        <input disabled type="text" [(ngModel)]="fatturaMod.cliente.ragioneSociale" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+    </div>
+    <div class="input-group input-group-md mb-3 w-75">
+        <span class="input-group-text" id="inputGroup-sizing-sm">P.IVA</span>
+        <input disabled type="text" [(ngModel)]="fatturaMod.cliente.partitaIva"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+    </div>
+    <div class="input-group mb-3 w-75">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">Tipo Cliente</label>
+        </div>
+        <select disabled class="custom-select" id="inputGroupSelect01" [(ngModel)]="fatturaMod.cliente.tipoCliente">
+          <option selected></option>
+          <option [ngValue]="item" *ngFor="let item of tipo">{{item}}</option>
+        </select>
+      </div>
+    <div class="input-group input-group-md mb-3 w-75">
+        <span class="input-group-text" id="inputGroup-sizing-sm">@</span>
+        <input disabled type="text" [(ngModel)]="fatturaMod.cliente.email"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+    </div>
+    <div class="input-group input-group-md mb-3 w-75">
+        <span class="input-group-text" id="inputGroup-sizing-sm">PEC</span>
+        <input disabled type="text" [(ngModel)]="fatturaMod.cliente.pec" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+    </div>
+    <div class="input-group input-group-md mb-3 w-75">
+        <span class="input-group-text" id="inputGroup-sizing-sm"><i class="bi bi-telephone-fill"></i></span>
+        <input disabled type="text" [(ngModel)]="fatturaMod.cliente.telefono" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+    </div>
+
+    <h5 class="my-3">Info Contatto</h5>
+        <div class="input-group input-group-md mb-3 w-75">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Nome</span>
+            <input disabled type="text" [(ngModel)]="fatturaMod.cliente.nomeContatto"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-md mb-3 w-75">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Cognome</span>
+            <input disabled type="text" [(ngModel)]="fatturaMod.cliente.cognomeContatto"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-md mb-3 w-75">
+            <span class="input-group-text" id="inputGroup-sizing-sm"><i class="bi bi-telephone-fill"></i></span>
+            <input disabled type="text" [(ngModel)]="fatturaMod.cliente.telefonoContatto" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-md mb-3 w-75">
+            <span class="input-group-text" id="inputGroup-sizing-sm">@</span>
+            <input disabled type="text" [(ngModel)]="fatturaMod.cliente.emailContatto"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"describedby="inputGroup-sizing-sm"describedby="inputGroup-sizing-sm">
+        </div>
+
+        <h5 class="my-3">Sede Operativa</h5>
+        <div class="input-group input-group-md mb-3 w-75">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Via</span>
+            <input disabled type="text" [(ngModel)]="fatturaMod.cliente.indirizzoSedeOperativa.via" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-md mb-3 w-75">
+            <span class="input-group-text" id="inputGroup-sizing-sm">N.</span>
+            <input disabled type="text" [(ngModel)]="fatturaMod.cliente.indirizzoSedeOperativa.civico" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-md mb-3 w-75">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Cap</span>
+            <input disabled type="text" [(ngModel)]="fatturaMod.cliente.indirizzoSedeOperativa.cap" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-md mb-3 w-75">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Località</span>
+            <input disabled type="text" [(ngModel)]="fatturaMod.cliente.indirizzoSedeOperativa.localita" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group mb-3 w-75">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">Comune</label>
+            </div>
+            <select disabled class="custom-select" id="inputGroupSelect01" [(ngModel)]="fatturaMod.cliente.indirizzoSedeOperativa.comune">
+              <option selected [ngValue]="fatturaMod.cliente.indirizzoSedeOperativa.comune">{{fatturaMod.cliente.indirizzoSedeOperativa.comune.nome}}</option>
+              <option [ngValue]="item" *ngFor="let item of comuni">{{item.nome}}</option>
+            </select>
+          </div>
+        <div class="input-group input-group-md mb-3 w-75">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Provincia</span>
+            <input disabled type="text" [(ngModel)]="fatturaMod.cliente.indirizzoSedeOperativa.comune.provincia.nome" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-md mb-3 w-75">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Sigla</span>
+            <input disabled type="text" [(ngModel)]="fatturaMod.cliente.indirizzoSedeOperativa.comune.provincia.sigla" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <h5 class="my-3">Sede Legale</h5>
+        <div class="input-group input-group-md mb-3 w-75">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Via</span>
+            <input disabled type="text" [(ngModel)]="fatturaMod.cliente.indirizzoSedeLegale.via" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-md mb-3 w-75">
+            <span class="input-group-text" id="inputGroup-sizing-sm">N.</span>
+            <input disabled type="text" [(ngModel)]="fatturaMod.cliente.indirizzoSedeLegale.civico" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-md mb-3 w-75">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Cap</span>
+            <input disabled type="text" [(ngModel)]="fatturaMod.cliente.indirizzoSedeLegale.cap" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-md mb-3 w-75">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Località</span>
+            <input disabled type="text" [(ngModel)]="fatturaMod.cliente.indirizzoSedeLegale.localita" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group mb-3 w-75">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">Comune</label>
+            </div>
+            <select disabled class="custom-select" id="inputGroupSelect01" [(ngModel)]="fatturaMod.cliente.indirizzoSedeLegale.comune">
+              <option selected [ngValue]="fatturaMod.cliente.indirizzoSedeLegale.comune">{{fatturaMod.cliente.indirizzoSedeLegale.comune.nome}}</option>
+              <option [ngValue]="item" *ngFor="let item of comuni">{{item.nome}}</option>
+            </select>
+          </div>
+        <div class="input-group input-group-md mb-3 w-75">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Provincia</span>
+            <input disabled type="text" [(ngModel)]="fatturaMod.cliente.indirizzoSedeLegale.comune.provincia.nome" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-md mb-3 w-75">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Sigla</span>
+            <input disabled type="text" [(ngModel)]="fatturaMod.cliente.indirizzoSedeLegale.comune.provincia.sigla" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+              
+        <h5 class="my-3">Altro</h5>
+        <div class="input-group input-group-md mb-3 w-75">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Data Inserimento</span>
+            <input disabled type="text" [(ngModel)]="fatturaMod.cliente.dataInserimento" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-md mb-5 w-75">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Data Ultimo Contatto</span>
+            <input disabled type="text" [(ngModel)]="fatturaMod.cliente.dataUltimoContatto" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+</div>
+

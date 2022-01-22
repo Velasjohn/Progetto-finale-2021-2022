@@ -1,0 +1,57 @@
+<h2 class="my-3 text-center">Dettaglio cliente</h2>
+<div class="d-flex flex-column align-items-center mb-3">
+    <button type="button" class="btn btn-outline-warning mb-3" (click)="tutteFatture()">Visualizza tutte le fatture del cliente <i class="bi bi-journal-text"></i></button>
+    <div class="card mt-3 mb-4" style="width: 75%;">
+        <div class="card-header bg-dark text-light">
+            Info Contatto
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><span>Nome: {{dettaglio.nomeContatto}}</span></li>
+            <li class="list-group-item"><span>Cognome: {{dettaglio.cognomeContatto}}</span></li>
+            <li class="list-group-item"><span>Telefono: {{dettaglio.telefonoContatto}}</span></li>
+            <li class="list-group-item"><span>Email: {{dettaglio.emailContatto}}</span></li>
+        </ul>
+    </div>
+    <div class="card mb-4" style="width: 75%;">
+        <div class="card-header bg-dark text-light">
+            Sede Legale
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><span>Via: {{dettaglio.indirizzoSedeLegale.via}}</span></li>
+            <li class="list-group-item"><span>Num: {{dettaglio.indirizzoSedeLegale.civico}}</span></li>
+            <li class="list-group-item"><span>Cap: {{dettaglio.indirizzoSedeLegale.cap}}</span></li>
+            <li class="list-group-item"><span>Localtà: {{dettaglio.indirizzoSedeLegale.localita}}</span></li>
+            <li class="list-group-item"><span>Comune: {{dettaglio.indirizzoSedeLegale.comune. nome}}</span></li>
+            <li class="list-group-item"><span>Provincia: {{dettaglio.indirizzoSedeLegale.comune.provincia.nome}}
+                    ({{dettaglio.indirizzoSedeLegale.comune.provincia.sigla}})</span></li>
+        </ul>
+    </div>
+    <div class="card mb-4" style="width: 75%;">
+        <div class="card-header bg-dark text-light">
+            Info Azienda
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><span>Ragione sociale: {{dettaglio.ragioneSociale}}</span></li>
+            <li class="list-group-item"><span>P.IVA: {{dettaglio.partitaIva}}</span></li>
+            <li class="list-group-item"><span>Tipo cliente: {{dettaglio.tipoCliente}}</span></li>
+            <li class="list-group-item"><span>Email: {{dettaglio.email}}</span></li>
+            <li class="list-group-item"><span>Pec: {{dettaglio.pec}}</span></li>
+            <li class="list-group-item"><span>Telefono: {{dettaglio.telefono}}</span></li>
+            <li class="list-group-item"><span>Fatturato annuale: {{dettaglio.fatturatoAnnuale}}</span></li>
+        </ul>
+    </div>
+    <div class="card mb-4" style="width: 75%;">
+        <div class="card-header bg-dark text-light">
+            Sede Operativa
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><span>Via: {{dettaglio.indirizzoSedeOperativa.via}}</span></li>
+            <li class="list-group-item"><span>Num: {{dettaglio.indirizzoSedeOperativa.civico}}</span></li>
+            <li class="list-group-item"><span>Cap: {{dettaglio.indirizzoSedeOperativa.cap}}</span></li>
+            <li class="list-group-item"><span>Localtà: {{dettaglio.indirizzoSedeOperativa.localita}}</span></li>
+            <li class="list-group-item"><span>Comune: {{dettaglio.indirizzoSedeOperativa.comune. nome}}</span></li>
+            <li class="list-group-item"><span>Provincia: {{dettaglio.indirizzoSedeOperativa.comune.provincia.nome}}
+                    ({{dettaglio.indirizzoSedeOperativa.comune.provincia.sigla}})</span></li>
+        </ul>
+    </div>
+</div>

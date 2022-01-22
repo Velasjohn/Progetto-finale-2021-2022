@@ -1,0 +1,15 @@
+<h2 class="my-3 text-center">Fatture cliente {{fatture[0].cliente.ragioneSociale}}</h2>
+<h3 class="text-center">Nuova fattura  <button type="button" class="btn btn-outline-success mx-1" (click)="nuovaFattura()"><i class="bi bi-plus-square-fill"></i></button></h3>
+<div class="d-flex flex-column align-items-center mb-3">
+    <div class="card mt-3 mb-4" style="width: 75%;" *ngFor="let item of fatture">
+        <div class="card-header bg-dark text-light">
+            Fattura
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><span>Data: {{item.data}}</span></li>
+            <li class="list-group-item"><span>Numero: {{item.numero}}</span></li>
+            <li class="list-group-item"><span>Anno: {{item.anno}}</span></li>
+            <li class="list-group-item"><span>Stato: {{item.stato.nome}}</span></li>
+        </ul>
+    </div>
+</div>

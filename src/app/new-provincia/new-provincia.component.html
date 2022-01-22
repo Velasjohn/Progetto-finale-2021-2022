@@ -1,0 +1,18 @@
+<h2 class="my-4 text-center">Nuova provincia</h2>
+<div id="container" class="d-flex flex-column align-items-center my-4">
+    <div class="input-group input-group-md mb-3 w-50">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Provincia</span>
+        <input type="text"  [(ngModel)]="newProvincia.nome" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+    </div>
+    <div class="input-group input-group-md mb-3 w-50">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Sigla</span>
+        <input type="text" [(ngModel)]="newProvincia.sigla" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+    </div>
+    <button type="button" class="btn btn-primary w-25 my-3" (click)="salvaProvincia()">Salva</button>
+    <div class="align-items-start">
+        <button type="button" class="btn btn-outline-danger ml-5" (click)="Indietro()"><i class="bi bi-backspace-fill"></i> Torna indietro</button>
+    </div> 
+</div>
+
+
+

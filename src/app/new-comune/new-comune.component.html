@@ -1,0 +1,18 @@
+<h2 class="my-4 text-center">Nuovo comune</h2>
+<div id="container" class="d-flex flex-column align-items-center my-4">
+    <div class="input-group input-group-md mb-3 w-50">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Comune</span>
+        <input type="text" [(ngModel)]="newComune.nome" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+    </div>
+    <div class="input-group mb-3 w-50">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">Provincia</label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="newComune.provincia.id">
+          <option selected></option>
+          <option [ngValue]="item.id" *ngFor="let item of province">{{item.nome}}</option>
+        </select>
+      </div>
+      <button _ngcontent-wjk-c55="" type="button" class="btn btn-outline-primary mb-3" (click)="nuovaProvincia()">Clicca qui per inserire una nuova provincia <i class="bi bi-pin-map-fill"></i></button>
+    <button type="button" class="btn btn-primary w-25 my-3" (click)="salvaComune()">Salva</button>
+</div>

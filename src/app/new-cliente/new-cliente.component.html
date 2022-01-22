@@ -1,0 +1,136 @@
+<h2 class="my-3 text-center">{{title}}</h2>
+<div class="d-flex flex-column align-items-center">
+    <h5 class="my-3">Info Azienda</h5>
+    <div class="input-group input-group-md mb-3 w-75">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Ragione Sociale</span>
+        <input type="text" [(ngModel)]="clienteMod.ragioneSociale" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+    </div>
+    <div class="input-group input-group-md mb-3 w-75">
+        <span class="input-group-text" id="inputGroup-sizing-sm">P.IVA</span>
+        <input type="text" [(ngModel)]="clienteMod.partitaIva"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+    </div>
+    <div class="input-group mb-3 w-75">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="inputGroupSelect01">Tipo Cliente</label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="clienteMod.tipoCliente">
+          <option selected></option>
+          <option [ngValue]="item" *ngFor="let item of tipo">{{item}}</option>
+        </select>
+      </div>
+    <div class="input-group input-group-md mb-3 w-75">
+        <span class="input-group-text" id="inputGroup-sizing-sm">@</span>
+        <input type="text" [(ngModel)]="clienteMod.email"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+    </div>
+    <div class="input-group input-group-md mb-3 w-75">
+        <span class="input-group-text" id="inputGroup-sizing-sm">PEC</span>
+        <input type="text" [(ngModel)]="clienteMod.pec" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+    </div>
+    <div class="input-group input-group-md mb-3 w-75">
+        <span class="input-group-text" id="inputGroup-sizing-sm"><i class="bi bi-telephone-fill"></i></span>
+        <input type="text" [(ngModel)]="clienteMod.telefono" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+    </div>
+
+    <h5 class="my-3">Info Contatto</h5>
+        <div class="input-group input-group-md mb-3 w-75">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Nome</span>
+            <input type="text" [(ngModel)]="clienteMod.nomeContatto"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-md mb-3 w-75">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Cognome</span>
+            <input type="text" [(ngModel)]="clienteMod.cognomeContatto"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-md mb-3 w-75">
+            <span class="input-group-text" id="inputGroup-sizing-sm"><i class="bi bi-telephone-fill"></i></span>
+            <input type="text" [(ngModel)]="clienteMod.telefonoContatto" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-md mb-3 w-75">
+            <span class="input-group-text" id="inputGroup-sizing-sm">@</span>
+            <input type="text" [(ngModel)]="clienteMod.emailContatto"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"describedby="inputGroup-sizing-sm"describedby="inputGroup-sizing-sm">
+        </div>
+
+        <h5 class="my-3">Sede Operativa</h5>
+        <div class="input-group input-group-md mb-3 w-75">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Via</span>
+            <input type="text" [(ngModel)]="clienteMod.indirizzoSedeOperativa.via" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-md mb-3 w-75">
+            <span class="input-group-text" id="inputGroup-sizing-sm">N.</span>
+            <input type="text" [(ngModel)]="clienteMod.indirizzoSedeOperativa.civico" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-md mb-3 w-75">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Cap</span>
+            <input type="text" [(ngModel)]="clienteMod.indirizzoSedeOperativa.cap" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-md mb-3 w-75">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Località</span>
+            <input type="text" [(ngModel)]="clienteMod.indirizzoSedeOperativa.localita" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group mb-3 w-75">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">Comune</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="clienteMod.indirizzoSedeOperativa.comune">
+              <option selected [ngValue]="clienteMod.indirizzoSedeOperativa.comune">{{clienteMod.indirizzoSedeOperativa.comune.nome}}</option>
+              <option [ngValue]="item" *ngFor="let item of comuni">{{item.nome}}</option>
+            </select>
+          </div>
+        <div class="input-group input-group-md mb-3 w-75">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Provincia</span>
+            <input type="text" [(ngModel)]="clienteMod.indirizzoSedeOperativa.comune.provincia.nome" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-md mb-3 w-75">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Sigla</span>
+            <input type="text" [(ngModel)]="clienteMod.indirizzoSedeOperativa.comune.provincia.sigla" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <button type="button" class="btn btn-outline-primary mb-3"(click)="nuovoComune()">Clicca qui per inserire un nuovo comune <i class="bi bi-pin-map-fill"></i></button>
+        <h5 class="my-3">Sede Legale</h5>
+        <div class="input-group input-group-md mb-3 w-75">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Via</span>
+            <input type="text" [(ngModel)]="clienteMod.indirizzoSedeLegale.via" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-md mb-3 w-75">
+            <span class="input-group-text" id="inputGroup-sizing-sm">N.</span>
+            <input type="text" [(ngModel)]="clienteMod.indirizzoSedeLegale.civico" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-md mb-3 w-75">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Cap</span>
+            <input type="text" [(ngModel)]="clienteMod.indirizzoSedeLegale.cap" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-md mb-3 w-75">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Località</span>
+            <input type="text" [(ngModel)]="clienteMod.indirizzoSedeLegale.localita" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group mb-3 w-75">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">Comune</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="clienteMod.indirizzoSedeLegale.comune">
+              <option selected [ngValue]="clienteMod.indirizzoSedeLegale.comune">{{clienteMod.indirizzoSedeLegale.comune.nome}}</option>
+              <option [ngValue]="item" *ngFor="let item of comuni">{{item.nome}}</option>
+            </select>
+          </div>
+        <div class="input-group input-group-md mb-3 w-75">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Provincia</span>
+            <input type="text" [(ngModel)]="clienteMod.indirizzoSedeLegale.comune.provincia.nome" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-md mb-3 w-75">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Sigla</span>
+            <input type="text" [(ngModel)]="clienteMod.indirizzoSedeLegale.comune.provincia.sigla" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <button type="button" class="btn btn-outline-primary mb-3" (click)="nuovoComune()">Clicca qui per inserire un nuovo comune <i class="bi bi-pin-map-fill"></i></button>
+        
+        <h5 class="my-3">Altro</h5>
+        <div class="input-group input-group-md mb-3 w-75">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Data Inserimento</span>
+            <input type="text" [(ngModel)]="clienteMod.dataInserimento" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-md mb-3 w-75">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Data Ultimo Contatto</span>
+            <input type="text" [(ngModel)]="clienteMod.dataUltimoContatto" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+
+        <button type="button" class="btn btn-primary w-75 my-5" (click)="salvaCliente()">Salva</button>
+</div>
+
+

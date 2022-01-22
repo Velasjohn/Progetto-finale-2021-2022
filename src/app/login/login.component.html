@@ -1,0 +1,17 @@
+<div id="logo">
+    <form class="h-100 d-flex flex-column justify-content-center align-items-center" id="login">
+        <div class="my-2">
+            <i class="bi bi-person-fill"></i><input [(ngModel)]="username" name="username" type="text" Placeholder="Username">
+        </div>
+        <div class="my-2">
+           <i class="bi bi-lock-fill"></i><input type="password" [(ngModel)]="password" name="password" Placeholder="Password">
+        </div>
+        <div class="my-2">
+            <button type="button" class="btn btn-primary" (click)="logIn()">Entra</button>
+        </div>
+        <h3 class="text-danger font-weight-bold">&nbsp;{{messaggio}}</h3>
+        <div class="my-2" id="transp">
+            <p>Non hai ancora un account? <a href="">Registrati</a></p>
+        </div>
+    </form>
+</div>

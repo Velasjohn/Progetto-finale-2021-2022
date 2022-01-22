@@ -1,0 +1,80 @@
+<h2 class="my-3 text-center">Dettaglio Fattura</h2>
+<div class="d-flex flex-column align-items-center mb-3">
+    <button type="button" class="btn btn-outline-warning mb-3" (click)="tutteFatture()">Visualizza tutte le fatture del
+        cliente <i class="bi bi-journal-text"></i></button>
+    <div class="card mt-3 mb-4" style="width: 75%;">
+        <div class="card-header bg-dark text-light">
+            Fattura
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><span>Data: {{dettaglioFatt.data}}</span></li>
+            <li class="list-group-item"><span>Numero: {{dettaglioFatt.numero}}</span></li>
+            <li class="list-group-item"><span>Anno: {{dettaglioFatt.anno}}</span></li>
+            <li class="list-group-item"><span>Stato: {{dettaglioFatt.data}}</span></li>
+        </ul>
+    </div>
+
+    <div class="card mb-4" style="width: 75%;">
+        <div class="card-header bg-dark text-light">
+            Info Contatto
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><span>Nome: {{dettaglioFatt.cliente.nomeContatto}}</span></li>
+            <li class="list-group-item"><span>Cognome: {{dettaglioFatt.cliente.cognomeContatto}}</span></li>
+            <li class="list-group-item"><span>Telefono: {{dettaglioFatt.cliente.telefonoContatto}}</span></li>
+            <li class="list-group-item"><span>Email: {{dettaglioFatt.cliente.emailContatto}}</span></li>
+        </ul>
+    </div>
+
+    <div class="card mb-4" style="width: 75%;">
+        <div class="card-header bg-dark text-light">
+            Info Azienda
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><span>Ragione sociale: {{dettaglioFatt.cliente.ragioneSociale}}</span></li>
+            <li class="list-group-item"><span>P.IVA: {{dettaglioFatt.cliente.partitaIva}}</span></li>
+            <li class="list-group-item"><span>Tipo cliente: {{dettaglioFatt.cliente.tipoCliente}}</span></li>
+            <li class="list-group-item"><span>Email: {{dettaglioFatt.cliente.email}}</span></li>
+            <li class="list-group-item"><span>Pec: {{dettaglioFatt.cliente.pec}}</span></li>
+            <li class="list-group-item"><span>Telefono: {{dettaglioFatt.cliente.telefono}}</span></li>
+            <li class="list-group-item"><span>Fatturato annuale: {{dettaglioFatt.cliente.fatturatoAnnuale}}</span></li>
+        </ul>
+    </div>
+
+    <div class="card mb-4" style="width: 75%;">
+        <div class="card-header bg-dark text-light">
+            Sede Operativa
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><span>Via: {{dettaglioFatt.cliente.indirizzoSedeOperativa.via}}</span></li>
+            <li class="list-group-item"><span>Num: {{dettaglioFatt.cliente.indirizzoSedeOperativa.civico}}</span></li>
+            <li class="list-group-item"><span>Cap: {{dettaglioFatt.cliente.indirizzoSedeOperativa.cap}}</span></li>
+            <li class="list-group-item"><span>Localtà: {{dettaglioFatt.cliente.indirizzoSedeOperativa.localita}}</span>
+            </li>
+            <li class="list-group-item"><span>Comune:
+                    {{dettaglioFatt.cliente.indirizzoSedeOperativa.comune.nome}}</span></li>
+            <li class="list-group-item"><span>Provincia:
+                    {{dettaglioFatt.cliente.indirizzoSedeOperativa.comune.provincia.nome}}
+                    ({{dettaglioFatt.cliente.indirizzoSedeOperativa.comune.provincia.sigla}})</span></li>
+        </ul>
+    </div>
+
+    <div class="card mb-4" style="width: 75%;">
+        <div class="card-header bg-dark text-light">
+            Sede Legale
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><span>Via: {{dettaglioFatt.cliente.indirizzoSedeLegale.via}}</span></li>
+            <li class="list-group-item"><span>Num: {{dettaglioFatt.cliente.indirizzoSedeLegale.civico}}</span></li>
+            <li class="list-group-item"><span>Cap: {{dettaglioFatt.cliente.indirizzoSedeLegale.cap}}</span></li>
+            <li class="list-group-item"><span>Localtà: {{dettaglioFatt.cliente.indirizzoSedeLegale.localita}}</span>
+            </li>
+            <li class="list-group-item"><span>Comune: {{dettaglioFatt.cliente.indirizzoSedeLegale.comune.nome}}</span>
+            </li>
+            <li class="list-group-item"><span>Provincia:
+                    {{dettaglioFatt.cliente.indirizzoSedeLegale.comune.provincia.nome}}
+                    ({{dettaglioFatt.cliente.indirizzoSedeLegale.comune.provincia.sigla}})</span></li>
+        </ul>
+    </div>
+
+</div>

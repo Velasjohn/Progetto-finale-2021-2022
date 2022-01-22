@@ -1,0 +1,31 @@
+<div class="my-5 mx-5">
+  <h3>Nuovo cliente  <button type="button" class="btn btn-outline-success mx-1" (click)="nuovoCliente()"><i class="bi bi-plus-square-fill"></i></button></h3>
+  <table class="table table-striped">
+    <thead class="thead-dark">
+    <tr>
+      <th>#</th>
+      <th>Ragione Sociale</th>
+      <th>P.IVA</th>
+      <th>Sede Operativa</th>
+      <th>Sede Legale</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of clienti; index as i">
+      <th scope="row">{{i + 1}}</th>
+      <td>{{item.ragioneSociale}}</td>
+      <td>{{item.partitaIva}}</td>
+      <td>{{item.indirizzoSedeOperativa.via}} {{item.indirizzoSedeOperativa.civico}} - {{item.indirizzoSedeOperativa.cap}} {{item.indirizzoSedeOperativa.comune.nome}} {{item.indirizzoSedeOperativa.comune.provincia.nome}} ({{item.indirizzoSedeOperativa.comune.provincia.sigla}})</td>
+      <td>{{item.indirizzoSedeLegale.via}} {{item.indirizzoSedeLegale.civico}} - {{item.indirizzoSedeLegale.cap}} {{item.indirizzoSedeLegale.comune.nome}} {{item.indirizzoSedeLegale.comune.provincia.nome}} ({{item.indirizzoSedeLegale.comune.provincia.sigla}})</td>
+      <td><button type="button" class="btn btn-outline-secondary btn-sm" (click)="fattureCliente(item)">Fatture</button></td>
+      <td><button type="button" class="btn btn-outline-primary btn-sm" (click)="dettaglioCliente(item)"><i class="bi bi-info-square-fill"></i></button></td>
+      <td><button type="button" class="btn btn-outline-warning btn-sm" (click)="modificaCliente(item)"><i class="bi bi-pencil-fill"></i></button></td>
+      <td><button type="button" class="btn btn-outline-danger btn-sm" (click)="eliminaCliente(item)"><i class="bi bi-x-circle-fill"></i></button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
